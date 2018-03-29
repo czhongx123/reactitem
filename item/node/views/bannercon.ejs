@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="/stylesheets/pintuer.css">
+		<link rel="stylesheet" href="/stylesheets/admin.css">
+		<script src="/javascripts/jquery.js"></script>
+		<script src="/javascripts/pintuer.js"></script>
+	</head>
+
+	<body>
+		<div class="panel admin-panel">
+			<div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+
+			<table class="table table-hover text-center">
+				<tr>
+					<th width="5%">ID</th>
+					<th width="10%">图片</th>
+					<th width="15%">地址</th>
+
+					<th width="15%">链接</th>
+					<th width="5%">序列</th>
+					<th width="10%">排序</th>
+					<th width="10%">操作</th>
+				</tr>
+
+				<% for(var i = 0; i < result.length; i++){  %>
+
+				<tr id="<%- result[i].id%>">
+					<td>
+						<%- result[i].id%>
+					</td>
+					<td><img src="<%- result[i].img%>" alt="" width="120" height="50" /></td>
+					<td width="15%" style="word-break: break-all;">
+						<%- result[i].img%>
+					</td>
+					<td width="15%" style="word-break: break-all;">
+						<%- result[i].link%>
+					</td>
+					<td >
+						<%- result[i].sortID%>
+					</td>
+	
+					<td>
+						<a class="button text-green border-green icon-arrow-up up" href="javascript:void(0)" sortID="<%- i+1%>">上移</a>
+					</td>
+					<td>
+						<div class="button-group">
+							<a class="button border-main" href="#add" onclick="modify(<%- result[i].id %>)"><span class="icon-edit" ></span> 修改</a>
+							<a class="button border-red" href="javascript:void(0)" dataid="<%-  result[i].id %>" sortID="<%- i+1%>" onclick="del(<%- result[i].id %>,<%- i+1%>)"><span class="icon-trash-o"></span> 删除</a>
+						</div>
+					</td>
+				</tr>
+
+				<%  } %>
+
+			</table>
+		</div>
+		
+		
+		
+		
+	
+		<div class="panel admin-panel margin-top" id="add">
+			<div class="panel-head"><strong><span id = "modstyle" class="icon-pencil-square-o">增加内容</span> </strong></div>
+			<div class="body-content">
+				<form method="post" class="form-x" action="/banner/addbanner">
+					<div class="form-group">
+						<div class="label">
+							<label>ID：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 id" value="" name="id" data-validate="required:请输入ID" />
+							<div class="tips"></div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="label">
+							<label>URL：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 url" name="url" value="" data-validate="required:请输入网址" />
+							<div class="tips"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label>Link：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 link" name="link" value="" data-validate="required:请输入链接" />
+							<div class="tips"></div>
+						</div>
+					</div>
+					
+
+					<div class="form-group">
+						<div class="label">
+							<label></label>
+						</div>
+						<div class="field cancelmod">
+							<button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="/javascripts/bannercon.js"></script>
+		
+	</body>
+
+</html>

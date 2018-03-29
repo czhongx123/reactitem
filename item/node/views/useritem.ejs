@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="/stylesheets/pintuer.css">
+		<link rel="stylesheet" href="/stylesheets/admin.css">
+		<script src="/javascripts/jquery.js"></script>
+		<script src="/javascripts/pintuer.js"></script>
+		<script src="/javascripts/useritem.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="panel admin-panel">
+			<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加管理员</strong></div>
+			<div class="body-content">
+				<form  class="form-x" >
+					<div class="form-group">
+						<div class="label">
+							<label>工号：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 nameid" value="" name="title" data-validate="required:请输入工号" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>姓名：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 name" value="" name="title" data-validate="required:请输入姓名" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>性别：</label>
+						</div>
+						<div class="field" style="padding-top:8px;">
+							男 <input id="ishome" value="男" type="radio" name="sexy" checked="checked" /> 女 <input id="isvouch" sexyType="2" type="radio" value="女" name="sexy" />
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>用户名：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 username" value="" name="title" data-validate="required:请输入用户名" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>初始密码：</label>
+						</div>
+						<div class="field">
+							<input type="password" class="input w50 psd" value="123456" name="title" readonly="readonly" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>部门：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 classid" value="" name="title" data-validate="required:请输入部门" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>职位：</label>
+						</div>
+						<div class="field">
+							<input type="text" class="input w50 position" value="" name="title" data-validate="required:请输入职位" />
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label>角色：</label>
+						</div>
+						<div class="field">
+							<select name="cid" class="input w50 keyItem">
+								<option value="3">初级管理员</option>
+								<option value="2">中级管理员</option>
+								<option value="1">高级管理员</option>
+
+							</select>
+							<div class="tips"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label></label>
+						</div>
+						<div class="field">
+							<button class="button bg-main icon-check-square-o load" type="button"> 提交</button>
+							<button class="button bg-yellow icon-share cancel" type="button"> 取消</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</body>
+
+</html>

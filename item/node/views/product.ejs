@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>后台管理中心</title>  
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <script src="/javascripts/jquery.js"></script>   
+   
+</head>
+<body style="background-color:#f2f9fd;">
+
+	<!--如果登录显示页面，如果没登录显示登录页面-->
+	<% if(userInfo[0].loginname){  %>
+	
+	
+	<!--公共头部-->
+	<%- include('header.ejs') %>
+
+	<!--公共侧边栏-->
+	<%- include('menu.ejs') %>
+
+
+<script src="/javascripts/menu.js"></script>   
+
+<!--内容顶部-->
+	<%- include('contentTop.ejs') %>
+
+
+<div class="admin">
+	<%- include('productlist.ejs') %>
+	
+
+</div>
+
+<% }else{ %>
+<%- include('login.ejs') %>
+<% } %>
+
+</body>
+</html>

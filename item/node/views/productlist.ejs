@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="/stylesheets/pintuer.css">
+		<link rel="stylesheet" href="/stylesheets/admin.css">
+		<link rel="stylesheet" href="/stylesheets/kkpager_blue.css">
+		<script src="/javascripts/jquery.js"></script>
+		<script src="/javascripts/pintuer.js"></script>
+		<script src="/javascripts/kkpager.min.js"></script>
+	</head>
+
+	<body>
+		<form method="post" action="" id="listform">
+			<div class="panel admin-panel">
+				<div class="panel-head"><strong class="icon-reorder"> 产品列表</strong> </div>
+				<div class="padding border-bottom">
+					<ul class="search" style="padding-left:10px;">
+						<li>
+							<a class="button border-main icon-plus-square-o" href="/product/add"> 添加产品</a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="button border-red icon-trash-o delSign" style="padding:5px 15px;"> 删除</a>
+						</li>
+
+						<li>
+							<input type="text" placeholder="请输入关键字" name="keywords" class="input searchInput" style="width:250px; line-height:17px;display:inline-block" />
+							<a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
+						</li>
+					</ul>
+				</div>
+				<table class="table table-hover text-center rendertab" page="<%- page %>" count="<%- count %>">
+
+					<tr>
+						<th width="8%" style="text-align:left; padding-left:20px;">
+							<a href="javascript:void(0)" style="padding:5px 5px" class="button border-blue icon-edit" onclick="slectAll()"> 全选</a>
+						</th>
+
+						<th>产品编号</th>
+						<th width="10%">分类</th>
+						<th>图片</th>
+						<th width="10%">产品名称</th>
+						<th width="20%" style="word-break:break-all">产品链接</th>
+						<th>原价(￥)</th>
+						<th>现价(￥)</th>
+						<th width="5%" style="cursor: pointer;" class="sale">销量
+							<% if(sort == 1){ %>
+
+							<span class="icon-sort-up"></span>
+
+							<%   }else if(sort == -1){ %>
+							<span class="icon-sort-down"></span>
+							<%   }else {%>
+							<span class="icon-sort"></span>
+							<%  } %>
+
+						</th>
+
+						<th width="310">操作</th>
+					</tr>
+
+					<% for(var i=0;i<result.length;i++){ %>
+					<tr id="<%- result[i].shopId %>">
+						<td style="text-align:left; padding-left:20px;">
+							<span style="display: inline-block;width: 20px;"><%- i+pageSize*(pageNO-1)+1 %></span>
+							<input type="checkbox" class="sign" name="id[]" value="" />
+						</td>
+						<td>
+							<%- result[i].shopId %>
+						</td>
+						<td>
+							<%- result[i].props %>
+						</td>
+						<td width="10%"><img src="<%- result[i].img %>" alt="" width="70" height="50" /></td>
+						<td>
+							<%- result[i].title %>
+						</td>
+						<td width="20%" style="word-break:break-all">
+							<%- result[i].link %>
+						</td>
+						<td>
+							<%- result[i].orgPrice %>
+						</td>
+						<td>
+							<%- result[i].price %>
+						</td>
+						<td>
+							<%- result[i].sale %>
+						</td>
+
+						<td>
+							<div class="button-group">
+								<a class="button border-main" href="/product/modifyproduct?shopId=<%- result[i].shopId %>"><span class="icon-edit"></span> 修改</a>
+								<a class="button border-red" href="javascript:void(0)" onclick="del(<%- result[i].shopId%>)"><span class="icon-trash-o"></span> 删除</a>
+							</div>
+						</td>
+					</tr>
+
+					<% } %>
+
+				</table>
+			</div>
+			<div style="width:800px;margin:0 auto;">
+				<div id="kkpager"></div>
+			</div>
+
+		</form>
+		<script src="/javascripts/productlist.js"></script>
+		
+	</body>
+
+</html>

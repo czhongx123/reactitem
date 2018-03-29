@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>图片上传</title>  
+    <link rel="stylesheet" href="stylesheets/pintuer.css">
+<link rel="stylesheet" href="stylesheets/admin.css">
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/pintuer.js"></script>
+</head>
+<body style="position: relative;" class="tips">
+<div class="panel admin-panel box" >
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 图片上传</strong></div>
+  <div class="body-content">
+  	
+    <form method="post" class="form-x " enctype="multipart/form-data" action="/pic/add">
+      <div class="form-group">
+        <div class="label">
+          <label>图片ID：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="sid" value="" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="stitle" value="" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>上传图片：</label>
+        </div>
+        <div class="field">
+      
+          <a class="button input-file   a-upload" style="cursor: pointer;" href="javascript:void(0);">+ 浏览文件<input type="file" style="cursor: pointer;"  id="simg" name="simg" /></a>
+       
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>图片路径：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input" name="surl" value="" />
+        </div>
+      </div>
+      
+              
+      
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+</div>
+
+		
+		
+	</script>
+		
+		
+
+</body></html>

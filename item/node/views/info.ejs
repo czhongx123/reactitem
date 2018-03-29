@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title>网站信息</title>
+		<link rel="stylesheet" href="/stylesheets/pintuer.css">
+		<link rel="stylesheet" href="/stylesheets/admin.css">
+		<script src="/javascripts/jquery.js"></script>
+		<script src="/javascripts/pintuer.js"></script>
+		
+		
+	</head>
+
+	<body>
+		<div class="panel admin-panel">
+			<div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 网站信息</strong></div>
+			<div class="body-content">
+
+				<div class="table-responsive">
+					<table class="table table-bordered" style="text-align: center;">
+						<tr>
+							<th>
+								项目
+							</th>
+							<th>
+								信息统计
+							</th>
+						</tr>
+						
+						
+						
+						<tr>
+							<td>
+								当前用户
+							</td>
+							<td>
+								<%= userInfo[0].loginname%>
+							</td>
+						</tr>
+						
+						  
+						
+						<tr>
+							<td>
+								登录时间
+							</td>
+							<td id="date">
+								
+							</td>
+						</tr>
+						
+						<% if(userInfo[0].loginkey=="高级管理员"){  %>
+						<tr>
+							<td>
+								管理员数
+							</td>
+							<td>
+								<%- usercount %>
+							</td>
+						</tr>
+						
+						  <% } %>
+						
+						
+						<tr>
+							<td>
+								轮播图片数
+							</td>
+							<td>
+								<%- bannercount %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								图片总数
+							</td>
+							<td>
+								<%- piccount %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								产品数目
+							</td>
+							<td>
+								<%- productcount %>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</body>
+<script src="/javascripts/info.js"></script>
+</html>

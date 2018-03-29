@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="/stylesheets/pintuer.css">
+		<!--<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />-->
+		<link rel="stylesheet" href="/stylesheets/admin.css">
+
+		<script src="javascripts/jquery.js"></script>
+		<script src="javascripts/pintuer.js"></script>
+	</head>
+
+	<body>
+		<div class="panel admin-panel">
+			<div class="panel-head"><strong class="icon-reorder">管理员列表</strong></div>
+			<div class="padding border-bottom">
+				<button type="button" class="button border-yellow" onclick="window.location.href='/manager/adduser'"><span class="icon-plus-square-o"></span> 添加管理员</button>
+			</div>
+			<table class="table table-hover text-center">
+				<tr>
+					<th width="5%">序号</th>
+					<th width="5%">工号</th>
+					<th width="5%">姓名</th>
+					<th width="5%">性别</th>
+					<th width="5%">用户名</th>
+					<th width="5%">部门</th>
+					<th width="5%">职位</th>
+					<th width="5%">角色</th>
+					<th width="5%">权限</th>
+					<th width="10%">操作</th>
+
+					<tr id="<%- result[0].id%>">
+						<td>
+							 0 
+						</td>
+						<td>
+							<%- result[0].id%>
+						</td>
+						<td>
+							<%- result[0].name%>
+						</td>
+						<td>
+							<%- result[0].sexy%>
+						</td>
+						<td>
+							<%- result[0].username%>
+						</td>
+						<td>
+							<%- result[0].classid%>
+						</td>
+						<td>
+							<%- result[0].position%>
+						</td>
+						<td>
+							超级管理员
+						</td>
+						<td class="changestatus">
+							<button status="<%- result[0].status%>" class="button button-little bg-blue " disabled="disabled">已启用</button>
+
+						</td>
+						<td>
+						<div class="button-group">
+								<a class="button border-main" href="javascript:void(0)" disabled="disabled" ><span class="icon-edit"></span> 修改</a>
+								<a class="button border-red" href="javascript:void(0)"disabled="disabled" ><span class="icon-trash-o"></span> 删除</a>
+							</div>
+						</td>
+					</tr>
+
+				
+
+					<% for(var i = 1; i < result.length; i++){  %>
+
+					<tr id="<%- result[i].id%>">
+						<td>
+							<%- i %>
+						</td>
+						<td>
+							<%- result[i].id%>
+						</td>
+						<td>
+							<%- result[i].name%>
+						</td>
+						<td>
+							<%- result[i].sexy%>
+						</td>
+						<td>
+							<%- result[i].username%>
+						</td>
+						<td>
+							<%- result[i].classid%>
+						</td>
+						<td>
+							<%- result[i].position%>
+						</td>
+						<td>
+							<%- result[i].key%>
+						</td>
+						<td class="changestatus">
+							<button status="<%- result[i].status%>" class="button button-little bg-blue status" >已启用</button>
+
+						</td>
+						<td>
+							<div class="button-group">
+								<a class="button border-main" href="javascript:void(0)" dataid="<%-  result[i].id %>" onclick="modify(<%- result[i].id %>)"><span class="icon-edit"></span> 修改</a>
+								<a class="button border-red" dataid="<%-  result[i].id %>" href="javascript:void(0)" onclick="del(<%- result[i].id %>)"><span class="icon-trash-o"></span> 删除</a>
+							</div>
+						</td>
+					</tr>
+
+					<%  } %>
+
+			</table>
+		</div>
+		
+	<script src="/javascripts/user.js"></script>
+	
+	</body>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/highlight.js"></script>
+	<script src="/javascripts/bootstrap-switch.js"></script>
+	<script src="/javascripts/main.js"></script>
+
+</html>

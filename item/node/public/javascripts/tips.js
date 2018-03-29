@@ -1,0 +1,47 @@
+var text = "";
+text += "<!DOCTYPE html>";
+text += "<html lang=\"zh-CN\">";
+text += "<head>";
+text += "<title>系统信息</title>";
+text += "<link rel=\"stylesheet\" href=\"css/pintuer.css\">";
+text += "<style type=\"text/css\">";
+text += "*{ margin:0px; padding:0px;}";
+text += ".error-container{ background:#fff; border:1px solid #0ae;  text-align:center; width:450px; margin:250px auto; font-family:Microsoft Yahei; padding-bottom:30px; border-top-left-radius:5px; border-top-right-radius:5px;  }";
+text += ".error-container h1{ font-size:16px; padding:12px 0; background:#0ae; color:#fff;} ";
+text += ".errorcon{ padding:35px 0; text-align:center; color:#0ae; font-size:18px;}";
+text += ".errorcon i{ display:block; margin:12px auto; font-size:30px; }";
+text += ".errorcon span{color:red;}";
+text += "h4{ font-size:14px; color:#666;}";
+text += "a{color:#0ae;}";
+text += "</style>";
+text += "</head>";
+text += "<body class=\"no-skin\">";
+text += "<div class=\"error-container\"> ";
+text += "    <h1> 后台管理系统-信息提示 </h1>   ";
+text += "    <div class=\"errorcon\">     ";
+text += "        <i class=\"icon-smile-o\"></i>操作成功        ";
+text += "        <span style=\"display:none;\"><i class=\"icon-frown-o\"></i>操作失败!</span>";
+text += "  ";
+text += "   </div>";
+text += "    <h4 class=\"smaller\">页面自动 <a id=\"href\" href=\"/pic\">跳转</a> 等待时间： <b id=\"wait\">1</b></h4> ";
+text += "   ";
+text += "</div>";
+text += "";
+text += "<script type=\"text/javascript\">";
+text += "(function(){";
+text += "var wait = document.getElementById('wait'),href = document.getElementById('href').href;";
+text += "var interval = setInterval(function(){";
+text += "	var time = --wait.innerHTML;";
+text += "	if(time <= 0) {";
+text += "		location.href = href;";
+text += "		clearInterval(interval);";
+text += "	};";
+text += "}, 1000);";
+text += "})();";
+text += "</script>";
+text += "</body>";
+text += "</html>";
+text += "";
+s
+
+
