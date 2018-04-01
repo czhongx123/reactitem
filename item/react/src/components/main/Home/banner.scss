@@ -1,0 +1,9 @@
+@import "~@/lib/reset.scss";
+
+.banner{
+     img{
+         @include rect(100%, 2.5rem);
+                    
+ }
+    
+}  

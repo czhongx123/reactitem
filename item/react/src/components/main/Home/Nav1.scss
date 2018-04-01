@@ -1,0 +1,26 @@
+@import "~@/lib/reset.scss";
+.nav1 {
+    @include rect(100%, 0.7rem);
+    @include background-color(#fff);
+    padding: 0 0.15rem;
+    margin-bottom: 0.05rem;
+    ul {
+        @include rect(100%, 0.7rem);
+        @include flexbox();
+        @include align-items();
+        @include justify-content(space-around);
+        @include rect(100%, 100%);
+        li {
+            @include rect(100%, 0.7rem);
+            a {
+                @include rect(100%, 100%);
+                @include flexbox();
+                @include align-items();
+                @include justify-content();
+                img {
+                    @include rect(auto, 0.7rem);
+                }
+            }
+        }
+    }
+}

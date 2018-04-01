@@ -1,0 +1,82 @@
+@import "~@/lib/reset.scss";
+.banner3 {
+    margin-top: 0.05rem;
+    padding: 0.1rem 0;
+    @include rect(100%, 2rem);
+    @include flexbox();
+    @include background-color(#fff);
+    .banner3left {
+        @include rect(2rem, 100%);
+        @include background-color(#fff);
+        position: relative;
+        div {
+                @include text-align();
+            
+        @include background-color(#fff);
+            
+//          @include rect(2rem, 85%);
+            position: absolute;
+            top: 0.35rem;
+            p {
+                @include text-align();
+                padding-left: 0.4rem;
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+        img {
+            @include rect(2rem, 100%);
+        }
+    }
+    .slider {
+        @include background-color(#fff);
+        
+        overflow-y: hidden;
+        @include rect(1rem, 100%);
+        position: relative;
+        .silder-list {
+            @include rect(auto, 1rem);
+                        @include text-color(#333);
+            
+            li {
+                @include rect(auto, 1rem);
+                        @include text-color(#333);
+                
+                a {
+                    @include rect(auto, 1rem);
+                        @include text-color(#333);
+                    
+                    .bannercon {
+                        position: absolute;
+                        bottom: -0.3rem;
+                        @include text-color(#333);
+                        @include font-size(0.12rem);
+                        z-index: 9999;
+                        img {
+                            position: absolute;
+                            top: 0;
+                            @include rect(0.6rem, 0.8rem);
+                        }
+                        
+                        p{
+                            span {
+                                @include text-color(#f66);
+                                @include font-size(0.14rem);
+                                margin-right: 0.1rem;
+                            }
+                            em {
+                                @include text-color(#999);
+                                text-decoration: line-through;
+                            }
+                        }
+                        .title {
+                              @include text-color(#f66);
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

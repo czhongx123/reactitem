@@ -1,7 +1,10 @@
-const homebanner=(state=[],action)=>{
+const homebanner2=(state=[],action)=>{
 	const { type , data } =action;
+		
+	
 	switch (type){
-		case 'GET_BANNER':
+
+		case 'HOME_BANNER2':
 				return [...state,data]
 			break;
 		default:
@@ -11,4 +14,4 @@ const homebanner=(state=[],action)=>{
 	
 	
 }
-export default homebanner;
+export default homebanner2;

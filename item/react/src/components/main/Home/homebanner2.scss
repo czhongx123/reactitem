@@ -1,0 +1,29 @@
+@import "~@/lib/reset.scss";
+.homebanner2 {
+    @include rect(100%, auto);
+    @include background-color(#fff);
+    .slider {
+        @include rect(100%, auto);
+        overflow: auto;
+        a {
+            @include rect(100%, auto);
+            @include text-align();
+            p {
+                z-index: 999;
+                //           display: inline-block;
+                position: absolute;
+                padding: 0 0.1rem;
+                bottom: 0.3rem;
+                left: 0;
+                right: 0;
+                margin: auto;
+                @include background-color(#fff);
+                @include text-color(#666);
+                //  @include rect(auto,0.1rem);
+                @include text-align();
+                border-radius: 0.2rem;
+                box-shadow: 0.03rem 0 0.03rem #999;
+            }
+        }
+    }
+}

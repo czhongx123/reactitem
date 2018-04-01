@@ -94,7 +94,9 @@ router.post('/search', function(req, res, next) {
 
 
 //============================产品信息=================================
-router.get('/homeaa', function(req, res, next) {
+
+//首页
+router.get('/home', function(req, res, next) {
 	var queryObj = {};
 	var showObj = {
 		_id: 0
@@ -107,36 +109,23 @@ router.get('/homeaa', function(req, res, next) {
 		})
 	})
 });
-
-router.get('/new', function(req, res, next) {
+//首页列表
+router.get('/homelist', function(req, res, next) {
 	var queryObj = {};
 	var showObj = {
 		_id: 0
 	}
 	mysql.connect((db) => {
-		mysql.find(db, "new", queryObj, showObj, (data) => {
+		mysql.find(db, "homelist", queryObj, showObj, (data) => {
 			res.send(data)
 
 			db.close();
 		})
 	})
 });
-
-router.get('/sell', function(req, res, next) {
-	var queryObj = {};
-	var showObj = {
-		_id: 0
-	}
-	mysql.connect((db) => {
-		mysql.find(db, "sell", queryObj, showObj, (data) => {
-			res.send(data)
-
-			db.close();
-		})
-	})
-});
-
+//分类列表
 router.get('/kind', function(req, res, next) {
+	
 	var queryObj = {};
 	var showObj = {
 		_id: 0
@@ -149,6 +138,43 @@ router.get('/kind', function(req, res, next) {
 		})
 	})
 });
+
+
+
+
+
+//分类列表二级
+router.get('/search', function(req, res, next) {
+	
+//	var queryObj = {typeID:req.query.typeID};
+	var queryObj = {typeId:"100100011"}
+	
+	var showObj = {
+		_id: 0
+	}
+	mysql.connect((db) => {
+		mysql.find(db, "kindlist", queryObj, showObj, (data) => {
+			res.send(data)
+
+			db.close();
+		})
+	})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 router.get('/detail', function(req, res, next) {
 	var queryObj = {};

@@ -1,0 +1,17 @@
+@import "~@/lib/reset.scss";
+
+.hometit{
+    @include flexbox();
+    @include align-items();
+        @include background-color(#efefef);
+    
+    padding: 0.1rem 0;
+    span{
+        margin-right: 0.1rem;
+        @include rect(0.15rem ,0.1rem);
+        @include font-size(0.12rem);
+        @include text-color(#333);
+        @include background-color(#77bc1f);
+    }
+    
+}  

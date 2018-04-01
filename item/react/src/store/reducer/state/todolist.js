@@ -1,6 +1,8 @@
 const todolist=(state=[],action)=>{
 	const { type , data } =action;
+	
 	switch (type){
+
 		case 'ADD_TODO_ITEM':
 				return [...state,data]
 			break;

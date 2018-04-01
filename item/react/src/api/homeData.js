@@ -3,7 +3,7 @@ import myajax from "@/tool/myajax.js"
 export default{
 	bannerList(cb){
 		const config={
-			url:"http://localhost:3000/api/banner",
+			url:"http://localhost:3000/api/product/home",
 			options:{},
 			success:(data)=>{
 				cb(data)

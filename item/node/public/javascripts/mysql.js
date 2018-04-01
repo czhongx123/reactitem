@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var mongo_url = "mongodb://10.8.162.58:27017/squirrel";
+var mongo_url = "mongodb://localhost:27017/squirrel";
 
 var mysql = {
 	connect(cb) {

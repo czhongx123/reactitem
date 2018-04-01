@@ -1,0 +1,70 @@
+@import "~@/lib/reset.scss";
+.homebottom {
+    @include background-color(#efefef);
+    @include rect(100%, auto);
+    padding: 0.2rem 0;
+    ul {
+        @include rect(100%, auto);
+        flex-wrap: wrap;
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items();
+        li {
+    @include background-color(#fff);
+            margin-bottom: 0.1rem;
+                padding-bottom: 0.1rem;
+            
+            @include rect(49%, auto);
+            a {
+                @include rect(100%, 100%);
+                padding-bottom: 0.1rem;
+                position: relative;
+                .tags {
+                    position: absolute;
+                    top: -0.8rem;
+                    left: 0;
+                }
+                .pic {
+                    @include rect(100%, auto);
+                }
+                .hbottomcon {
+                    padding: 0 0.05rem;
+
+                    .hbottomalias {
+                        @include font-size(0.14rem);
+                        @include text-color(#333);
+                        @include rect(auto,0.18rem);
+                    }
+                    .hbottomtit {
+                        @include font-size(0.12rem);
+                        @include text-color(#666);
+                        padding-right: 0.1rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .price {
+                        @include text-color(#f66);
+                        @include font-size(0.14rem);
+                        span {
+                            padding-right: 0.2rem;
+                        }
+                        em {
+                            @include text-color(#999);
+                            @include font-size(0.12rem);
+                            text-decoration: line-through;
+                        }
+                    }
+                    a {
+                            @include text-color(#77bc1f);
+                            @include font-size(0.28rem);
+                            position:absolute;
+                            top:0.25rem;
+                            right:-1.5rem;
+                    
+                    }
+                }
+            }
+        }
+    }
+}

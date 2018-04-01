@@ -1,0 +1,35 @@
+@import "~@/lib/reset.scss";
+
+
+
+.advice {
+    @include rect(100%, 0.4rem);
+    margin-bottom: 0.05rem;
+    overflow: auto;
+    ul {
+        @include rect(150%, 100%);
+        overflow: scroll;
+        @include background-color(#fff);
+        @include flexbox();
+        li {
+            @include flexbox();
+            @include rect(auto, 100%);
+            @include justify-content();
+            @include align-items();
+            @include font-size(0.12rem);
+            a {
+                @include text-color(#333);
+                padding: 0 0.1rem;
+                border-right: 0.01rem solid #eee;
+            }
+        }
+    }
+}
+
+
+#wrap[data-fixed="fixed"]{
+        position: fixed;
+        top:0;
+        left: 0;
+        margin: 0;
+}
