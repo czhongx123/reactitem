@@ -7,7 +7,7 @@ import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
 import Header from "./Header.js"
 import ajax from '@/tool/ajax_fetch.js'
 import { Toast } from 'antd-mobile';
-import './register.scss'
+import './resetpsd.scss'
 
 class Login extends Component {
 
@@ -87,11 +87,13 @@ class Login extends Component {
 				nextstate: "isnext"
 			})
 			
+			
 		}else{
 			
 			this.setState({
 				nextstate: "nonext"
 			})
+			
 		}		
 	}
 	
@@ -124,40 +126,49 @@ class Login extends Component {
 
 		
 	}
-	//点击完成注册
+	//点击完成修改密码
 	toregister(){
 		
+
+		
 		if(this.state.okstate=="isnext"){
+			if(this.state.randdom!=this.state.codevalue){
+				
 			
-			var obj={
-				phone:this.state.phonevalue,
-				password:this.state.passwordvalue
-			}
-			
-			
-			ajax({
-				method:"get",
-				data:obj,
-				url:"http://localhost:3000/api/product/register",
-				success:function(data){
-					if(data=="1"){
-					localStorage.setItem("user",this.state.phonevalue)
-						
-						Toast.success('注册成功', 1);
-						window.location.href='/home'
-	
-					}else{
-						Toast.success('该手机号已注册', 1);
-						window.location.href='/register'
-						
-					}
+				var obj={
+					phone:this.state.phonevalue,
 					
-					
+					password:this.state.passwordvalue
 					
 				}
-			})
-			
-			
+				
+				
+				ajax({
+					method:"get",
+					data:obj,
+					url:"http://localhost:3000/api/product/resetpassword",
+					success:function(data){
+						console.log(data)
+						if(data=="1"){
+		
+							Toast.success('修改成功', 1);
+							window.location.href='/home'
+		
+						}else{
+							Toast.success('该手机号未注册', 1);
+							window.location.href='/register'
+							
+						}
+						
+						
+						
+					}
+				})
+				
+			}else{
+				Toast.success('验证码错误', 1);
+				
+			}
 			
 		}
 		
@@ -295,7 +306,7 @@ class Login extends Component {
 			//倒计时重新发送
 			this.hadsendCode()
 //开始传递数据,发送验证码
-//			
+			
 			ajax({
 				method:"get",
 				data:obj,
@@ -311,8 +322,9 @@ class Login extends Component {
 					
 				}
 			})
-		
+			
 
+			console.log('yes')
 		} else {
 			console.log('no')
 
@@ -325,7 +337,7 @@ class Login extends Component {
 			<div className="App">
        	<div className='container'>
        	<div className='register'>
-       		<Header titcon="快速注册" />
+       		<Header titcon="忘记密码" />
        		
        			<div className='registerifo'>
 		       			<p  className={"user"+" "+this.state.curshow} >
@@ -334,25 +346,26 @@ class Login extends Component {
 		       				<span onClick={this.emptyvalue.bind(this,'phone')} className={this.state.phonereg}></span>
 		       			</p>
 		       			
-		       			<p className={this.state.nextshow}>
-		       				<span >设置密码</span>
-		       				<input onChange={this.passwordinput.bind(this)} value={this.state.passwordvalue}  type='password' placeholder="请输入密码"  />
-		       				<span onClick={this.emptyvalue.bind(this,'password')} className={this.state.passwordreg}></span>
-		       			</p>
+		       		
 		       			
 		       			
-       					<p  className={'code'+" "+this.state.curshow}>
+       					<p  className={'code'+" "+"user"+" "+this.state.curshow}>
 		       				<span>验证码</span>
 		       				<input type='text' placeholder="请输入验证码" value={this.state.codevalue} onChange={this.codeinput.bind(this)}/>
 		       				<span onClick={this.getcode.bind(this)} className={this.state.ifcode}>{this.state.codetit}<em>{this.state.codetime}</em></span>
+		       			</p>
+		       				<p >
+		       				<span >新密码</span>
+		       				<input onChange={this.passwordinput.bind(this)} value={this.state.passwordvalue}  type='password' placeholder="请输入密码"  />
+		       				<span onClick={this.emptyvalue.bind(this,'password')} className={this.state.passwordreg}></span>
 		       			</p>
        			</div>
        			
        			<div className='registeraction'>
 	
        					<div >
-       						<button className={this.state.nextstate+" "+this.state.curshow} onClick={this.donextaction.bind(this)}>下一步</button>
-       						<button className={this.state.okstate +" "+this.state.nextshow} onClick={this.toregister.bind(this)}>完成</button>
+       			
+       						<button className={this.state.okstate} onClick={this.toregister.bind(this)}>确认</button>
        					</div>
 
        				

@@ -1,0 +1,127 @@
+@import "~@/lib/reset.scss";
+.register {
+    img {
+        @include rect(100%, 1rem);
+    }
+    .registerifo {
+        padding: 0 0.05rem;
+        @include background-color(#fff);
+        p {
+            @include flexbox();
+            @include rect(100%, 0.5rem) span {
+                @include rect(10%, 100%);
+                @include flexbox();
+                @include justify-content();
+                @include align-items();
+                @include font-size(0.16rem);
+            }
+            input {
+                @include rect(auto, 100%) ;
+                border: 0;
+                @include flex();
+                outline: none;
+            }
+            span{
+                &:nth-of-type(1){
+                    @include rect(0.7rem, 100%) ;
+
+                    
+                } 
+            }
+            
+            .icon-cuo{
+                @include text-color(#f00);
+                
+            }
+            .icon-dui{
+                @include text-color(#63d01f);
+                
+            }
+        }
+        .user {
+            border-bottom: 0.01rem solid #cecece;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            
+        } 
+        .code {
+            span{
+                &:nth-of-type(2){
+                    @include rect(1.1rem, 100%) ;
+                    
+                    em{
+                    @include text-color(#ef3e5f);
+                        
+                    }
+                } 
+            }
+            
+            .nocode{
+                @include text-color(#ccc);
+            }
+            .iscode{
+                @include text-color(#77bc1f);
+            }
+            
+        }
+        
+        
+        
+        
+    }
+    .registeraction {
+        div {
+            @include rect(100%, auto);
+            padding: 0.2rem 0.1rem 0.1rem 0.1rem;
+            .nonext {
+                @include rect(100%, 0.4rem);
+                @include background-color(#eee);
+                @include font-size(0.18rem);
+                @include line-height(0.4rem);
+                @include text-align();
+                border-radius: 0.05rem;
+                @include text-color(#999);
+                border: 0;
+                outline: none;
+            }
+            .isnext {
+                @include rect(100%, 0.4rem);
+                @include background-color(#77bc1f);
+                @include font-size(0.18rem);
+                @include line-height(0.4rem);
+                @include text-align();
+                border-radius: 0.05rem;
+                @include text-color(#fff);
+                border: 0;
+                outline: none;
+            }
+        }
+        
+    }
+     input::-webkit-input-placeholder{
+            color:#999;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+           color:#999;
+           
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#999;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+            color:#999;
+        }
+        
+     .hide{
+        display: none;
+    }    
+    .show{
+       
+    }    
+      
+        
+        
+}

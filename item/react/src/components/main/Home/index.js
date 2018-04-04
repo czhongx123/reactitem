@@ -130,6 +130,7 @@ class Home extends Component {
 			type: "HOME_BANNER2",
 			data: data[0].recommendChannel.recommendActivitys.items
 			})
+
 			
 			this.state.homebanner3time=this.state.homebanner3time/1000;
 			
@@ -148,14 +149,15 @@ class Home extends Component {
 			
 				this.state.homebanner3time-=1;
 				
-				for(var i=0;i<data[0].recommendChannel.recommendActivitys.items.length;i++){
+				for(let i=0,len= data[0].recommendChannel.recommendActivitys.items.length; i<len;i++){
 				this.state.recommendActivitys[i].countdown-=1
 					
 					
 				}
-			
+
 			this.setState({				
 				homebanner3time:this.state.homebanner3time,
+				recommendActivitys:this.state.recommendActivitys
 			
 			})
 			

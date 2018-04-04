@@ -5,10 +5,14 @@ import Kind from '@/components/main/Kind/index.js'
 import Integral from '@/components/main/Integral/index.js'
 import Cart from '@/components/main/Cart/index.js'
 import User from '@/components/main/User/index.js'
-
+import detailData from "@/api/detailData"
 
 class App extends Component {
+	state={
+  		cartnum:''
+  	}
   render() {
+  	
     return (
       <div className="App">
        	<div className='container'>
@@ -42,10 +46,11 @@ class App extends Component {
 									<p>松鼠币商城</p>
         			</NavLink>
         		</li>
-        		<li>
+        		<li className='homecart'>
         			<NavLink to='/cart' activeClassName='active'>
         				<span className='iconfont icon-msnui-cart'></span>
 									<p>购物车</p>
+									<em>{this.state.cartnum!=0 ? this.state.cartnum :""}</em>
         			</NavLink>
         		</li>
         		<li>
@@ -59,6 +64,17 @@ class App extends Component {
       </div>
     );
   }
+  
+	componentDidMount(){
+		detailData.cartnum((data)=>{
+			console.log(data)
+			this.setState({
+				cartnum:data.num
+			})
+		})
+		
+	 }
+  
 }
 
 export default App;

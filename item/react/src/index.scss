@@ -11,28 +11,32 @@ body,
     @include flex-direction(column);
     .container {
         @include flex();
-        @include rect(100%,auto);
-        @include overflow(hidden);  //重要
+        @include rect(100%, auto);
+        @include overflow(hidden); //重要
         .box {
             @include rect(100%, 100%);
             @include flexbox();
             @include flex-direction(column);
             header {
                 @include rect(100%, 0.44rem);
-                @include background-color(#cecece);
+                @include background-color(#fff);
+                border-bottom: 0.01rem solid #cecece;
+                @include flexbox();
+                @include justify-content();
+                @include align-items();
+                @include font-size(0.16rem);
             }
             .content {
                 @include flex();
                 @include rect(100%, auto);
                 @include overflow();
-                
             }
         }
     }
     footer {
         @include rect(100%, 0.5rem);
         @include background-color(#fff);
-        border-top:0.01rem solid #eee;
+        border-top: 0.01rem solid #eee;
         ul {
             @include rect(100%, 100%);
             @include flexbox();
@@ -48,15 +52,154 @@ body,
                     @include align-items();
                     span {
                         @include font-size(0.22rem);
+                        img {
+                            @include rect(0.5rem, 0.5rem);
+                            margin-top: -0.3rem;
+                        }
+                    }
+                    .cartnum {
+                        position: relative;
+                        em {
+                            position: absolute;
+                            @include background-color(#ff9601);
+                            @include text-color(#fff);
+                            @include font-size(0.12rem);
+                            @include rect(auto, 0.16rem);
+                            @include line-height(0.16rem);
+                            padding: 0 0.04rem;
+                            border-radius: 0.07rem;
+                            top: -0.3rem;
+                            right: 0;
+                        }
                     }
                     p {
                         @include font-size(0.12rem);
+                    }
+                    .moveup {
+                        margin-top: -0.03rem;
+                    }
+                    .addcart {
+                        padding: 0.05rem 0.1rem;
+                        border-radius: 0.05rem;
+                        border: 0.01rem solid #ff9601;
+                        @include text-color(#ff9601);
+                    }
+                    .buynow {
+                        padding: 0.05rem 0.1rem;
+                        border-radius: 0.05rem;
+                        @include text-color(#fff);
+                        @include background-color(#77bc1f);
                     }
                     &.active {
                         @include text-color(#77bc1f);
                     }
                 }
             }
+            .inheart {
+                @include rect(0.3rem, 100%);
+            }
+            .homecart {
+                position: relative;
+                em {
+                    position: absolute;
+                    @include background-color(#ff9601);
+                    @include text-color(#fff);
+                    @include font-size(0.12rem);
+                    @include rect(auto, 0.16rem);
+                    @include line-height(0.16rem);
+                    padding: 0 0.04rem;
+                    border-radius: 0.07rem;
+                    top: 0rem;
+                    right: 0.15rem;
+                }
+            }
+        }
+        //购物车底部
+        .cartbuttom {
+            padding-left: 0.05rem;
+            @include rect(100%, 100%);
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items();
+            p {
+                &:nth-of-type(1) {
+                    span {
+                        border-radius: 100%;
+                        @include font-size(0.18rem);
+                        @include rect(0.18rem, 0.18rem);
+                        @include line-height(0.18rem);
+                        border-radius: 100%;
+                        border: 0;
+                        margin-right: 0.05rem;
+                    }
+                }
+            }
+            div {
+                @include flex();
+                p {
+                    padding-right: 0.05rem;
+                    &:nth-of-type(1) {
+                        @include text-align(right);
+                        em {
+                            @include text-color(#f66)
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        @include text-align(right);
+                        @include text-color(#999);
+                        @include font-size(0.12rem);
+                        span {
+                            padding: 0 0.05rem;
+                        }
+                    }
+                    .needpay {
+                        @include font-size(0.12rem);
+                    }
+                }
+            }
+            .empty {
+                @include rect(auto, 100%);
+                padding: 0.25rem;
+                @include text-color(#fff);
+                @include background-color(#999);
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content();
+                @include align-items();
+                span {
+                    @include font-size(0.16rem);
+                }
+            }
+            .noempty {
+                @include rect(auto, 100%);
+                padding: 0.25rem;
+                @include text-color(#fff);
+                @include background-color(#77bc1f);
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content();
+                @include align-items();
+                span {
+                    @include font-size(0.16rem);
+                }
+            }
+            
+            .hide{
+                display: none;
+            }
+            .del{
+                border-radius: 0.05rem;
+                border:0.01rem solid #ee2e52;
+                @include text-color(#ee2e52);
+                margin-right: 0.2rem;
+                padding: 0.03rem 0.2rem;
+            }
+            
+            
+        }
+        .icon-duihao {
+            @include text-color(#fff);
+            @include background-color(#86c052);
         }
     }
 }

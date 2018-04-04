@@ -3,6 +3,8 @@ import { Carousel } from 'antd-mobile';
 import store from '@/store/index.js'
 import './homebanner2.scss'
 
+
+
 class Homebanner2 extends Component {
 
 	state = {
@@ -111,9 +113,10 @@ class Homebanner2 extends Component {
 	}
 
 	componentDidMount() {
-		
 
 		setTimeout(() => {
+
+			
 			this.setState({
 				data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI','243'],
 			});

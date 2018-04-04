@@ -1,0 +1,104 @@
+@import "~@/lib/reset.scss";
+.cartinfo {
+   .cartit{
+       padding: 0 0.1rem;
+       @include rect(100%,0.33rem);
+       @include background-color(#f9c0cb);
+       @include flexbox();
+       @include justify-content(space-between);
+       @include align-items();
+       span{
+       @include text-color(#fff);
+           
+       }
+       em{
+               font-size: 0.12rem;
+           
+           strong{
+               padding-left: 0.03rem;
+               font-size: 0.14rem;
+           }
+       }
+   }
+   
+   ul{
+       li{
+           @include rect(100%,auto);
+           padding: 0.1rem 0.05rem;
+           margin-bottom: 0.05rem;
+           @include flexbox();
+           @include align-items();
+           @include background-color(#fff);
+           .iconfont{
+               margin-right: 0.1rem;
+               @include font-size(0.18rem);
+               @include rect(0.18rem,0.18rem);
+               @include line-height(0.18rem);
+               border-radius: 100%;
+               border: 0;
+               
+           }
+           
+           
+           img{
+           @include rect(0.7rem,0.7rem);
+           border:0.01rem solid #cecece;
+           border-radius: 0.05rem;
+           margin-right: 0.1rem;
+               
+           }
+           .goodsifo{
+           @include flexbox();
+           @include flex-direction(column);
+           @include justify-content();
+            
+            p{
+                &:nth-of-type(2){
+                    @include text-color(#ee2e52);
+                    @include font-size(0.16rem);
+                }
+                &:nth-of-type(3){
+                    
+                    span{
+                        display:inline-block;
+                        border:0.01rem solid #cecece;
+                         @include rect(0.3rem,0.23rem);
+                        @include text-align();
+                        @include line-height(0.23rem);
+                        &:nth-of-type(1){
+                            border-radius: 0.03rem 0 0 0.03rem;
+                        }
+                        &:nth-of-type(2){
+                            border-radius: 0 0.03rem 0.03rem 0;
+                        }
+                    }
+                    em{
+                        display:inline-block;
+                         @include rect(0.4rem,0.23rem);
+                        @include text-align();
+                       position: relative;
+                       top: -0.01rem;
+                        
+                        border:0.01rem solid #cecece;
+                        border-left: 0;
+                        border-right: 0;
+                    }
+                }
+            }
+               
+           }
+           
+           
+       }
+   }
+   
+   .icon-duihao{
+       @include text-color(#fff);
+       @include background-color(#86c052);
+       
+   }
+   .icon-yuanquanweixuanfuben{
+       
+   }
+   
+}

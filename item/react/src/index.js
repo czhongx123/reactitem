@@ -9,6 +9,8 @@ import App from '@/components/App';
 import Detail from '@/components/Detail';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
+import Search from '@/components/Search';
+import Resetpsd from '@/components/Resetpsd';
 import registerServiceWorker from '@/registerServiceWorker';
 import { BrowserRouter as Router ,Route,Switch } from 'react-router-dom';
 
@@ -50,6 +52,8 @@ ReactDOM.render(
 			<Route path='/detail'  component={Detail} />
 			<Route path='/login'  component={Login} />
 			<Route path='/register'  component={Register} />
+			<Route path='/resetpsd'  component={Resetpsd} />
+			<Route path='/search'  component={Search} />
 			<Route path='/'  component={App} />
 		</Switch>
 	</Router>
